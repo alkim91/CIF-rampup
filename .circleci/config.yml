@@ -7,11 +7,11 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    working_directory: ~/my-app
+    working_directory: ~/working-directory/my-app
     
     steps:
       - checkout:
-          path: ~/my-app
+          path: ~/working-directory
       - run: mvn test
 
   build:
@@ -20,10 +20,10 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    working_directory: ~/my-app
+    working_directory: ~/working-directory/my-app
     steps:
       - checkout:
-          path: ~/my-app
+          path: ~/working-directory
       - run: mvn package
 
 workflows:
