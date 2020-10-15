@@ -10,7 +10,7 @@ jobs:
     working_directory: ~/my-app
     
     steps:
-      - checkout
+      - checkout:
           path: ~/my-app
       - run: mvn test
 
@@ -22,7 +22,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     working_directory: ~/my-app
     steps:
-      - checkout
+      - checkout:
           path: ~/my-app
       - run: mvn package
 
