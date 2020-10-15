@@ -10,7 +10,8 @@ jobs:
     
     steps:
       - checkout
-      - run: cd ../my-app mvn test
+      - run: cd ../my-app 
+      - run: mvn test
 
   build:
     docker:
@@ -21,7 +22,8 @@ jobs:
     
     steps:
       - checkout
-      - run: cd ../my-app mvn package
+      - run: cd ../my-app 
+      - run: mvn package
 
 workflows:
   version: 2
